@@ -1,11 +1,11 @@
-import {simpleCalculator} from './index';
+import {simpleCalculator, Action} from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
     const res = simpleCalculator({
       a: 4,
       b: 3,
-      action: '+'
+      action: Action.Add
     });
 
     expect(res).toBe(7);
@@ -15,7 +15,7 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 55,
       b: 18,
-      action: '-'
+      action: Action.Subtract
     })
 
     expect(res).toBe(37);
@@ -25,7 +25,7 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 11,
       b: 48,
-      action: '*'
+      action: Action.Multiply
     });
 
     expect(res).toBe(528);
@@ -35,7 +35,7 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 255,
       b: 5,
-      action: '/'
+      action: Action.Divide
     });
 
     expect(res).toBe(51);
@@ -45,7 +45,7 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 2,
       b: 8,
-      action: '^'
+      action: Action.Exponentiate
     });
     expect(res).toBe(256);
   });
@@ -64,7 +64,7 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 2,
       b: 'bb',
-      action: '^'
+      action: Action.Exponentiate
     });
 
     expect(res).toBeNull();
