@@ -1,8 +1,9 @@
 import { mockOne, mockTwo, mockThree, unmockedFunction } from './index';
-import {jest} from '@jest/globals';
+import { jest } from '@jest/globals';
 
 jest.mock('./index', () => {
-  const originalModule = jest.requireActual<typeof import('./index')>('./index');
+  const originalModule =
+    jest.requireActual<typeof import('./index')>('./index');
 
   return {
     __esModule: true,

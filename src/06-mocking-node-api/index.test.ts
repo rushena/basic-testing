@@ -1,5 +1,5 @@
 import { readFileAsynchronously, doStuffByTimeout, doStuffByInterval } from '.';
-import {jest} from '@jest/globals';
+import { jest } from '@jest/globals';
 import path from 'path';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
@@ -15,7 +15,7 @@ describe('doStuffByTimeout', () => {
 
   beforeEach(() => {
     jest.spyOn(global, 'setTimeout');
-  })
+  });
 
   test('should set timeout with provided callback and timeout', () => {
     const fn = jest.fn();
@@ -43,7 +43,7 @@ describe('doStuffByInterval', () => {
 
   beforeEach(() => {
     jest.spyOn(global, 'setInterval');
-  })
+  });
 
   test('should set interval with provided callback and timeout', () => {
     const fn = jest.fn();
@@ -64,7 +64,7 @@ describe('doStuffByInterval', () => {
   });
 });
 
-describe('readFileAsynchronously',  () => {
+describe('readFileAsynchronously', () => {
   const filename = 'custom-filename.txt';
 
   test('should call join with pathToFile', async () => {
@@ -80,7 +80,7 @@ describe('readFileAsynchronously',  () => {
   });
 
   test('should return file content if file exists', async () => {
-    const fileBody: string = 'Hello NodeJS';
+    const fileBody = 'Hello NodeJS';
     jest.spyOn(fs, 'existsSync').mockReturnValueOnce(true);
     jest.spyOn(fsPromises, 'readFile').mockResolvedValueOnce(fileBody);
 

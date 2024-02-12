@@ -1,4 +1,4 @@
-import {  simpleCalculator, Action } from './index';
+import { simpleCalculator, Action } from './index';
 
 const testCases = [
   { a: 1, b: 2, action: Action.Add, expected: 3 },
@@ -12,13 +12,15 @@ const testCases = [
   { a: 2, b: 8, action: Action.Exponentiate, expected: 256 },
   { a: 11, b: 2, action: Action.Exponentiate, expected: 121 },
   { a: 3, b: 2, action: '!', expected: null },
-  { a: 3, b: 'test', action: Action.Exponentiate, expected: null }
+  { a: 3, b: 'test', action: Action.Exponentiate, expected: null },
 ];
 
 describe('simpleCalculator', () => {
-  it.each(testCases)('calculator variants', ({a, b, action, expected}) => {
+  it.each(testCases)('calculator variants', ({ a, b, action, expected }) => {
     const res = simpleCalculator({
-      a, b, action
+      a,
+      b,
+      action,
     });
 
     expect(res).toBe(expected);
